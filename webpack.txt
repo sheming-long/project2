@@ -1,0 +1,34 @@
+1.创建packge.json 文件                                         npm init -y
+
+2.安装jquery 和lodash                                          npm i jquery lodash
+
+3.安装webpack和其插件                                          npm i webpack webpack-cli -D
+
+4.在src文件夹里面创建index.js文件(到此已经零配置),然后打包      npx webpack
+
+
+5.在index里发送jq的ajax请求,然后在webpack.config.js(自建)里面配置 devServer (跨域),将open设置为true(浏览器是否自动启动) ,然后再设置 Proxy(在里面设置
+好拦截信息的规则),在其里面设置好发送的地址(target),将api置换成空,也就是路进重写(pathRewrite)
+
+6.安装插入html的插件,然后在webpack.config.js里面引入html-webpack-plugin
+
+, 然后设置plugins,设置 原始模板用来生成dist的index.html         npm i html-webpack-plugin -D
+                                                            
+7.安装热启动,启动热启动                                         npm i webpack-dev-server -D
+
+8将@映射到文件头部,在src里面创建script文件,文件里面创app.js  然后在index.js 里面引入app.js 之后再webpack.config里面创建
+ resolve:{
+        alias:{
+            "@":path.resolve(__dirname,"./src")
+        }
+    }
+之后创建一个jsconfig.json , 将@映射为src
+
+9配置mode的环境,安装minimatch和cross-env,将生产环境和开发环境设置给package.json的scriprs,然后将mode: process.env.NODE_ENV || 'development',可以在拦截(target)时,根据
+process.env.NODE_ENV的值来判断开发模式,从而访问不同的网址.      npm i minimatch
+                                                               npm i cross-env
+
+
+                                        
+
+

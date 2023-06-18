@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@/*":["src/*"]
+        }
+    }
+}
+//将@映射为src
